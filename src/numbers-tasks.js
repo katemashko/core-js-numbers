@@ -120,7 +120,7 @@ function getLinearEquationRoot(a, b) {
 function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
   throw new Error('Not implemented');
 }
-// ========================================Solve!================================================================
+
 /**
  * Returns a last digit of a integer number.
  * The input parameter will always be greater than or equal to zero and will be in decimal notation.
@@ -277,10 +277,20 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  if (index < 2) {
+    return index;
+  }
+  let firstNumber = 0;
+  let secondNumber = 1;
+  for (let i = 2; i <= index; i += 1) {
+    const sum = firstNumber + secondNumber;
+    firstNumber = secondNumber;
+    secondNumber = sum;
+  }
+  return secondNumber;
 }
-// ========================================Solve!================================================================
+
 /**
  * Returns the sum of all numbers from 1 to n.
  *
@@ -368,8 +378,8 @@ function getSine(num) {
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-function numberToStringInBase(/* number, base */) {
-  throw new Error('Not implemented');
+function numberToStringInBase(number, base) {
+  return number.toString(base);
 }
 // ========================================Solve!================================================================
 /**
